@@ -15,43 +15,34 @@
         border: 2px solid grey;
         color: grey;
     }
-    div {
-        width: 30px;
-        height: 30px;
-        background-color: black;
-        margin: 5px;
-        float: left;
-        color: white;
-        text-align: center;
-        line-height: 30px;
-    }
-
-    .circle {
-        background-color: white;
-        border-radius: 50%;
-        color: black;
-        border: 2px solid black;
+    .bigger {
+        font-size: large;
+        color: palevioletred;
     }
 
     </style>
 </head>
 <body>
-    <button>Click here!</button>
+    <button>Add element to list</button>
+    <ul>
+
+    </ul>
 
     <script>
         const btn = document.querySelector("button"); //get first button
+        const list = document.querySelector("ul");
         let number = 1;
         //btn.addEventListener("click",  function(){  //anonymous function
         //    console.log("click");
         //})
         const addElement = function(){
-            const div = document.createElement('div')
-            div.textContent = number
-            if(number%5 === 0) {
-                div.classList.add("circle");
+            const li = document.createElement('li')
+            li.textContent = number
+            if(number%3 === 0) {
+                li.classList.add("bigger");
             }
-            document.body.appendChild(div)
-            number++;
+            list.appendChild(li)
+            number = number + 2;
         }
 
         btn.addEventListener("click", addElement);
