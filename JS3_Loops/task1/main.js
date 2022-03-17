@@ -11,6 +11,7 @@ const growLi = function(){
         });
     }
     else {
+        
         for(let i = 0; i<liItems.length; i++){
             liItems[i].style.fontSize = size + "px";
         }
