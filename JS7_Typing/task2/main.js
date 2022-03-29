@@ -1,24 +1,33 @@
-// http://websamuraj.pl/examples/js/projekt8/
-// Uzyskaj efekt jak pod tym linkiem 
-// Użyj setTimeout zamiast setInterval,
-// Opóźniej start pisanie każdego słowa
-// Uwaga: Zadanie bardzo trudne
-
 const spnText = document.querySelector('.text');
 const spnCursor = document.querySelector('.cursor');
 const txt = ['tekst1', 'tekst2', 'tekst3']
+let index1 = 0;
+let index2 = 0;
+const time = 500;
 
 const addLetter = () => {
- for(let i = 0; i < txt,length; i++) {
-    spnText.textContent = "";
-    for(let j = 0; j < txt[i].length; i++)
-        spnText.textContent += txt[i][j];
-       //if (indexText === txt[i].length) clearInterval(indexTyping);
- }
+    if (index1 < txt.length) {
+
+        //reset indeksów
+        if (index2 === txt[index1].length) {
+            index1++;
+            index2 = 0;
+
+            if (index1 === txt.length) clearInterval(addLetters);
+            else {
+                spnText.textContent = "";
+            }
+        }
+
+        if (index1 <= txt.length && index2 < txt[index1].length){
+            spnText.textContent += txt[index1][index2];
+            index2++;
+        }
+    }
+    console.log(index1, index2);
 }
 
-setTimeout(myGreeting, 5000)
-addLetter();
+const addLetters = setInterval(addLetter, time);
 
 const cursorAnimation = () => {
  spnCursor.classList.toggle('active');
