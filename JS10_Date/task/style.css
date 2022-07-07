@@ -1,0 +1,26 @@
+body {
+    margin: 0;
+}
+
+.time {
+    position: absolute;
+    width: 100vw;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    font-size: 60px;
+    text-align: center;
+    font-family: monospace;
+}
+
+button {
+    font-size: 44px;
+    margin: 40px;
+    background-color: #74c2df;
+    border: 1px solid #7e9cb9;
+    box-sizing: border-box;
+    color: #ffffff;
+    font-weight: 700;
+    line-height: 24px;
+    padding: 20px 23px;
+}
